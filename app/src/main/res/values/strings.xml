@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SongsApp</string>
+    <string name="song_title">Song Title</string>
+    <string name="enter_song_title_here">Enter song title here</string>
+    <string name="singers">Singers</string>
+    <string name="enter_singer_names_here">Enter singer names here</string>
+    <string name="year">Year</string>
+    <string name="enter_year_of_song_release_here">Enter year of song release here</string>
+    <string name="stars">Stars</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="insert_song">Insert Song</string>
+    <string name="edit_songs">Edit Songs</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="all_songs">All Songs</string>
+    <string name="add_song">Add song</string>
+    <string name="edit_delete">Edit/delete</string>
+    <string name="insert_songs">Insert Songs</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>
