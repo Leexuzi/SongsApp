@@ -37,12 +37,9 @@ public class Songs implements Serializable{
         return stars;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public void setTitle(String title) { this.title = title; }
 
-    public void setSingers(String singers) {
-        this.singers = singers;
+    public void setSingers(String singers) { this.singers = singers;
     }
 
     public void setYear(Integer year) {

@@ -16,7 +16,7 @@ public class EditSongs extends AppCompatActivity {
     EditText etTitle, etSinger, etYear;
     RadioGroup rdBtnGrp;
     RadioButton btnStars;
-    Button btnEdit;
+    Button btnEdit, btnDel;
 
     Songs data;
 
@@ -30,14 +30,14 @@ public class EditSongs extends AppCompatActivity {
         etYear = findViewById(R.id.etYear);
         rdBtnGrp = findViewById(R.id.rdBtnGrp);
         btnEdit = findViewById(R.id.btnEdit);
+        btnDel = findViewById(R.id.btnDelete);
 
         Intent i = getIntent();
         data = (Songs) i.getSerializableExtra("data");
 
         etTitle.setText(data.getTitle());
         etSinger.setText(data.getSingers());
-        Log.d("year", String.valueOf(data.getYear()));
-        etYear.setText(data.getYear());
+        etYear.setText(data.getYear().toString());
         rdBtnGrp.check(data.getStars());
 
         btnEdit.setOnClickListener(new View.OnClickListener(){
@@ -54,7 +54,21 @@ public class EditSongs extends AppCompatActivity {
                 int rBtnId = rdBtnGrp.getCheckedRadioButtonId();
                 btnStars = findViewById(rBtnId);
                 int stars = Integer.parseInt(btnStars.getText().toString());
+                data.setTitle(title);
+                data.setSingers(singer);
+                data.setYear(year);
+                data.setStars(stars);
                 db.updateSong(data);
+
+                finish();
+            }
+        });
+
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper dbh = new DBHelper(EditSongs.this);
+                dbh.deleteSong(data.getId());
 
                 finish();
             }
